@@ -3,19 +3,11 @@ body, html {
     margin-top:-5px;
 }
 
-.page-wrap {
-    min-height:100%;
-    margin-bottom:-25px;
-}
-
-.page-wrap:after {
-    content:"";
-    display:block;
-}
-
 body {
+    -webkit-animation:"bgcolor" 1s ease .5s forwards, "enable_scrollbar" .1s ease 3.5s forwards;
+    overflow-y:hidden;
     overflow-x:hidden;
-    background-color:#f0f0f0;
+    background-color:white;
     user-select:none;
 }
 
@@ -34,12 +26,68 @@ img {
     -webkit-user-drag:none;
 }
 
+.in {
+    opacity:1;
+}
+
+.out {
+    opacity:0;
+}
+
+.urlw {
+    transition: all 0.4s ease;
+    margin: 0 auto;
+    position: relative;
+    width: 565px;
+    margin-top:10px;
+    color:red;
+    font-family: Helvetica;
+}
+
+.logo_container {
+    -webkit-animation:"fade_out_hide" .4s ease 3s forwards; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+#c1 {
+    -webkit-animation:"fade_out" 1s ease .5s forwards;
+}
+
+#li1 {
+    margin-left:50px;
+    -webkit-animation:"li1_1" 1s ease .5s forwards;
+}
+
+#li2 {
+    opacity:0;
+    margin-left:-275px;
+    -webkit-animation:"li2_1" 1s ease .5s forwards;
+}
+
+.logo_item {
+}
+
+.page-wrap {
+    min-height:100%;
+    margin-bottom:-25px;
+}
+
+.page-wrap:after {
+    content:"";
+    display:block;
+}
+
 .page-wrap:after, .footer {
     height:25px;
 }
 
 .cookie {
+    -webkit-animation: "fade_in" .2s ease 3.4s forwards;
     position:absolute;
+    opacity:0;
     top:-80vw;
     width:100vw;
     left:-10px;
@@ -102,3 +150,43 @@ img {
     }
 }
 
+@-webkit-keyframes li1_1 {
+    from {margin-left:50px;}
+    to {margin-left:0px;transform:rotate(360deg);}
+}
+
+@-webkit-keyframes li2_1 {
+    from {margin-left:-275px;opacity:0;}
+    to {margin-left:0px;opacity:1;}
+}
+
+@-webkit-keyframes fade_in {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@-webkit-keyframes fade_out {
+    from {opacity:1;}
+    to {opacity:0;}
+}
+
+@-webkit-keyframes placeholder {
+    from {display:auto;}
+    to{display:auto;}
+}
+
+@-webkit-keyframes fade_out_hide {
+    0% {opacity:1;}
+    99% {opacity:0;position:inherit;}
+    100% {opacity:0;position:absolute;}
+}
+
+@-webkit-keyframes enable_scrollbar {
+    from {overflow-y: hidden;}
+    to {overflow-y: visible;}
+}
+
+@-webkit-keyframes bgcolor {
+    from {background-color: white;}
+    to {background-color:#f0f0f0;}
+}
