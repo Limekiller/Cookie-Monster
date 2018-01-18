@@ -18,8 +18,8 @@ def clear_cookies():
 
 
 thread_loop = True
-cwd = os.getcwd()
-splash = (cwd+'\Splash\ie_index.html')
+cwd = os.getcwd()[:-4]
+splash = (cwd+'Splash\ie_index.html')
 
 os.popen('.\hidecmd.vbs')
 threading.Thread(target=clear_cookies).start()

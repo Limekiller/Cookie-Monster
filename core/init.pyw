@@ -6,8 +6,8 @@ import os
 import time, threading
 
 thread_loop = True
-cwd = os.getcwd()
-splash = QUrl.fromLocalFile(cwd+'\Splash\index.html')
+cwd = os.getcwd()[:-4]
+splash = QUrl.fromLocalFile(cwd+'Splash\index.html')
 app = QApplication([])
 view = QWebEngineView()
 view.resize(900, 700)
@@ -23,7 +23,7 @@ def clear_cookies():
 
 threading.Thread(target=clear_cookies).start()
 view.setWindowTitle("Cookie Monster")
-view.setWindowIcon(QIcon("./icon.jpg"))
+view.setWindowIcon(QIcon("./cookie_small.ico"))
 
 view.load(QUrl(splash))
 # view.load(QUrl("https://youtube.com"))
