@@ -1,0 +1,212 @@
+body, html {
+    height:100%;
+    margin-top:-5px;
+}
+
+body {
+    animation:bgcolor 1s ease 1.5s forwards, enable_scrollbar .1s ease 4.5s forwards;
+    overflow-y:hidden;
+    overflow-x:hidden;
+    background-color:white;
+    user-select:none;
+}
+
+button {
+    height:40px;    
+    width:50px;
+    border: 0;
+    background-color:#dbdbdb;
+}
+
+button:hover {
+    background-color:#c3c3c3;
+}
+
+img {
+    -webkit-user-drag:none;
+}
+
+.in {
+    opacity:1;
+}
+
+.out {
+    opacity:0;
+}
+
+.urlw {
+    transition: all 0.4s ease;
+    margin: 0 auto;
+    position: relative;
+    width: 565px;
+    margin-top:10px;
+    color:red;
+    font-family: Helvetica;
+}
+
+.logo_container {
+    animation:fade_in .2s ease forwards, fade_out_hide .4s ease 4s forwards; 
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+#ie{
+    animation:scalef .4s ease .5s forwards;
+}
+
+#iec {
+    animation:scale .4s ease .5s forwards, fade_out 1s ease 1.5s forwards;
+}
+
+#c2 {
+    animation:fade_in 1s ease 1.5s forwards;
+}
+
+#li1 {
+    margin-left:50px;
+    animation:li1_1 1s ease 1.5s forwards;
+}
+
+#li2 {
+    opacity:0;
+    margin-left:-275px;
+    animation:li2_1 1s ease 1.5s forwards;
+}
+
+.logo_item {
+}
+
+.page-wrap {
+    -ms-animation: fade_in .4s ease 5.01s forwards;
+    min-height:100%;
+    margin-bottom:-25px;
+}
+
+.page-wrap:after {
+    content:"";
+    display:block;
+}
+
+.page-wrap:after, .footer {
+    height:25px;
+}
+
+.cookie {
+    -webkit-animation: "fade_in" .2s ease 3.4s forwards;
+    animation: fade_in .2s ease 4.4s forwards;
+    position:absolute;
+    opacity:0;
+    top:-80vw;
+    width:100vw;
+    left:-10px;
+}
+
+.buttons {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.button {
+    display:flex;
+    border-radius:10px;
+    transition: all 0.4s ease;
+    width:150px;
+    height:150px;
+    background-color:black;
+    align-items:center;
+    justify-content:center;
+    margin:25px;
+}
+
+.button:hover {
+    margin-top:-10px;
+}
+
+.urlbar {
+    text-align:center;
+    margin-top:50px;
+}
+
+.bar {
+    height:30px;
+    width:500px;
+    padding:5px;
+    border:0;
+}
+
+@media all and (max-width: 760px){
+    button {
+        margin-top:10px;
+        width:100px;
+    }
+    .buttons {
+        flex-direction: column;
+    }
+    .button {
+        flex-direction: column;
+    }
+    .button:hover {
+        margin-right:-10px;
+        margin-top:25px;
+    }
+    .bar {
+        width:90%;
+    }
+    .urlbar {
+        width:100%;
+    }
+}
+
+@keyframes li1_1 {
+    from {margin-left:50px;}
+    to {margin-left:0px;transform:rotate(360deg);}
+}
+
+@keyframes li2_1 {
+    from {margin-left:-275px;opacity:0;}
+    to {margin-left:0px;opacity:1;}
+}
+
+@keyframes fade_in {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+@keyframes fade_out {
+    from {opacity:1;}
+    to {opacity:0;}
+}
+
+@keyframes placeholder {
+    from {display:auto;}
+    to{display:auto;}
+}
+
+@keyframes fade_out_hide {
+    0% {opacity:1;}
+    99% {opacity:0;position:inherit;}
+    100% {opacity:0;position:absolute;}
+}
+
+@keyframes enable_scrollbar {
+    from {overflow-y: hidden;}
+    to {overflow-y: visible;}
+}
+
+@keyframes bgcolor {
+    from {background-color: white;}
+    to {background-color:#f0f0f0;}
+}
+
+@keyframes scale {
+    from {margin-top:-24px; opacity:0; margin-left:-25px;height: 99px; width:99px;}
+    to {height: 50px; width: 50px; opacity:1; margin:0;}
+}
+
+@keyframes scalef {
+    from {opacity:1;margin-top:-25px; margin-left:-25px;height: 100px; width:100px;}
+    to {height: 50px; opacity:0; width: 50px;margin:0;}
+}

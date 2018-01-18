@@ -3,6 +3,7 @@ import threading
 import pythoncom
 import time
 import win32com.client
+import win32console,win32gui
 
 # This version literally uses IE itself, opening it in a new window and deleting its cookies. This is not a very
 # good program, it's mostly just for my personal use.
@@ -12,14 +13,15 @@ def clear_cookies():
     global thread_loop
     while thread_loop:
         time.sleep(10)
-        os.system('.\cookies.bat')
+        os.popen('.\hidecmd.vbs')
+        # os.system('.\hidecmd.vbs')
 
 
 thread_loop = True
 cwd = os.getcwd()
-splash = (cwd+'\Splash\index.html')
+splash = (cwd+'\Splash\ie_index.html')
 
-os.system('.\cookies.bat')
+os.popen('.\hidecmd.vbs')
 threading.Thread(target=clear_cookies).start()
 
 ie = win32com.client.Dispatch("InternetExplorer.Application")
