@@ -11,10 +11,7 @@ splash = QUrl.fromLocalFile(cwd+'\Splash\index.html')
 app = QApplication([])
 view = QWebEngineView()
 view.resize(900, 700)
-
 QWebEngineSettings.globalSettings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
-# QWebEngineSettings.globalSettings().setAttribute(QWebEngineSettings.LocalStorageEnabled, False)
-# view.page().profile().setPersistentStoragePath("./Storage")
 
 
 def clear_cookies():
