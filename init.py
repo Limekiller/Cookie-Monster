@@ -10,7 +10,7 @@ cwd = os.getcwd()
 splash = QUrl.fromLocalFile(cwd+'\Splash\index.html')
 app = QApplication([])
 view = QWebEngineView()
-view.setFixedSize(900, 700)
+view.resize(900, 700)
 
 QWebEngineSettings.globalSettings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
 # QWebEngineSettings.globalSettings().setAttribute(QWebEngineSettings.LocalStorageEnabled, False)

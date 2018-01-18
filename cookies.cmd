@@ -1,0 +1,1 @@
+.\psexec64.exe -l c:\windows\system32\RunDll32.exe InetCpl.cpl,ClearMyTracksByProcess 6655

@@ -5,6 +5,7 @@ body, html {
 
 body {
     -webkit-animation:"bgcolor" 1s ease .5s forwards, "enable_scrollbar" .1s ease 3.5s forwards;
+    animation:bgcolor 1s ease .5s forwards, enable_scrollbar .1s ease 3.5s forwards;
     overflow-y:hidden;
     overflow-x:hidden;
     background-color:white;
@@ -45,7 +46,8 @@ img {
 }
 
 .logo_container {
-    -webkit-animation:"fade_out_hide" .4s ease 3s forwards; 
+    -webkit-animation:"fade_in" .2s ease forwards, "fade_out_hide" .4s ease 3s forwards; 
+    animation:fade_in .2s ease forwards, fade_out_hide .4s ease 3s forwards; 
     display:flex;
     justify-content:center;
     align-items:center;
@@ -54,23 +56,27 @@ img {
 
 #c1 {
     -webkit-animation:"fade_out" 1s ease .5s forwards;
+    animation:fade_out 1s ease .5s forwards;
 }
 
 #li1 {
     margin-left:50px;
     -webkit-animation:"li1_1" 1s ease .5s forwards;
+    animation:li1_1 1s ease .5s forwards;
 }
 
 #li2 {
     opacity:0;
     margin-left:-275px;
     -webkit-animation:"li2_1" 1s ease .5s forwards;
+    animation:li2_1 1s ease .5s forwards;
 }
 
 .logo_item {
 }
 
 .page-wrap {
+    -ms-animation: fade_in .4s ease 4s forwards;
     min-height:100%;
     margin-bottom:-25px;
 }
@@ -86,6 +92,7 @@ img {
 
 .cookie {
     -webkit-animation: "fade_in" .2s ease 3.4s forwards;
+    animation: fade_in .2s ease 3.4s forwards;
     position:absolute;
     opacity:0;
     top:-80vw;
@@ -155,7 +162,17 @@ img {
     to {margin-left:0px;transform:rotate(360deg);}
 }
 
+@keyframes li1_1 {
+    from {margin-left:50px;}
+    to {margin-left:0px;transform:rotate(360deg);}
+}
+
 @-webkit-keyframes li2_1 {
+    from {margin-left:-275px;opacity:0;}
+    to {margin-left:0px;opacity:1;}
+}
+
+@keyframes li2_1 {
     from {margin-left:-275px;opacity:0;}
     to {margin-left:0px;opacity:1;}
 }
@@ -165,12 +182,27 @@ img {
     to {opacity:1;}
 }
 
+@keyframes fade_in {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
 @-webkit-keyframes fade_out {
     from {opacity:1;}
     to {opacity:0;}
 }
 
+@keyframes fade_out {
+    from {opacity:1;}
+    to {opacity:0;}
+}
+
 @-webkit-keyframes placeholder {
+    from {display:auto;}
+    to{display:auto;}
+}
+
+@keyframes placeholder {
     from {display:auto;}
     to{display:auto;}
 }
@@ -181,12 +213,28 @@ img {
     100% {opacity:0;position:absolute;}
 }
 
+@keyframes fade_out_hide {
+    0% {opacity:1;}
+    99% {opacity:0;position:inherit;}
+    100% {opacity:0;position:absolute;}
+}
+
 @-webkit-keyframes enable_scrollbar {
     from {overflow-y: hidden;}
     to {overflow-y: visible;}
 }
 
+@keyframes enable_scrollbar {
+    from {overflow-y: hidden;}
+    to {overflow-y: visible;}
+}
+
 @-webkit-keyframes bgcolor {
+    from {background-color: white;}
+    to {background-color:#f0f0f0;}
+}
+
+@keyframes bgcolor {
     from {background-color: white;}
     to {background-color:#f0f0f0;}
 }
